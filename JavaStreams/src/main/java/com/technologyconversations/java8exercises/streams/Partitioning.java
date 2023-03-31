@@ -9,6 +9,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static java.util.stream.Collectors.partitioningBy;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Partitioning {
 
@@ -23,7 +25,7 @@ public class Partitioning {
     }
 
     public static Map<Boolean, List<Person>> partitionAdults(final List<Person> people) {
-        return null;
+        return people.stream().collect(partitioningBy(p -> p.age() >= 18));
     }
 
 }
