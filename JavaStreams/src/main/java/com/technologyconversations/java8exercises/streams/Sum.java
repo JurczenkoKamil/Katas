@@ -17,7 +17,7 @@ public class Sum {
     }
 
     public static int calculate(final List<Integer> people) {
-        return 0;
+        return people.stream().mapToInt(Integer::intValue).sum();
     }
 
 }
