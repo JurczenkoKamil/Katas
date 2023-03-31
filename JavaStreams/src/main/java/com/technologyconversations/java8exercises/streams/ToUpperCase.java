@@ -18,7 +18,7 @@ public class ToUpperCase {
     }
 
     public static List<String> transform(final List<String> collection) {
-        return null;
+        return collection.stream().map(String::toUpperCase).toList();
     }
 
 }
