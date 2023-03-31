@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PeopleStats {
@@ -25,7 +26,7 @@ public class PeopleStats {
     }
 
     public static IntSummaryStatistics getStats(final List<Person> people) {
-        return null;
+        return people.stream().collect(Collectors.summarizingInt(Person::age));
     }
 
 }
